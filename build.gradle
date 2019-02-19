@@ -1,0 +1,28 @@
+plugins {
+	id 'org.jetbrains.kotlin.jvm' version '1.3.21'
+	id 'application'
+}
+
+group 'org.nicerobot.issues'
+version '1.0-SNAPSHOT'
+
+application {
+	mainClassName = 'org.nicerobot.issues.MainKt'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	api group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+	compile group: 'org.eclipse.jgit', name: 'org.eclipse.jgit', version: '5.2.1.201812262042-r'
+	implementation group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk8'
+}
+
+compileKotlin {
+	kotlinOptions.jvmTarget = '1.8'
+}
+compileTestKotlin {
+	kotlinOptions.jvmTarget = '1.8'
+}
